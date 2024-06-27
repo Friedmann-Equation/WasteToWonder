@@ -30,12 +30,6 @@
     </style>
 </head>
 <body>
-    <div class="glove-option" onclick="window.location.href='{{ route('mobile-glove') }}'">
-        Mobile Glove - Rp 500000
-    </div>
-    <div class="glove-option" onclick="window.location.href='{{ route('lite-glove') }}'">
-        Lite Glove - Rp 1200000
-    </div>
-
+        <p>Bottle Options</p>
 </body>
 </html>

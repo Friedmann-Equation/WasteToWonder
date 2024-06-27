@@ -26,8 +26,8 @@
 </head>
 <body>
     <div class="content">
-        <h1>Mobile Glove</h1>
-        <p>Price: Rp 500000</p>
+        <h1>Lite Glove</h1>
+        <p>Price: Rp 1200000</p>
         <button onclick="window.location.href='/buy-mobile-glove'">Buy Now</button>
     </div>
 </body>

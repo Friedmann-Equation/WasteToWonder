@@ -137,7 +137,7 @@
         <div class="sidebar">
             <h1>Welcome, {{ session('username') }}!</h1>
             <!-- <h1>Welcome, {{ session('userid') }}!</h1> -->
-            <a href="#" class="active">
+            <a href="{{ route('home') }}">
                 <i class="fas fa-home icon"></i> Home
             </a>
             <a href="{{ route('points') }}">
@@ -146,7 +146,7 @@
             <a href="{{ route('gloves') }}">
                 <i class="fas fa-hand-paper icon"></i> Gloves
             </a>
-            <a href="{{ route('bottles') }}">
+            <a href="{{ route('bottles') }}" class="active">
                 <i class="fas fa-recycle icon"></i> Bottles
             </a>
             <a href="{{ route('signin') }}">
@@ -155,21 +155,15 @@
         </div>
 
         <div class="main-content">
-            <h2>About Us</h2>
+            <h2>Bottle We Receive to Recycle</h2>
             <div class="section">
-                <div class="slider-container">
-                    <div class="slider">
-                        <img src="/images/sdg.png" alt="SDG">
-                        <img src="/images/slogan.png" alt="Slogan">
-                        <img src="/images/system.png" alt="System">
-                        <img src="/images/tech.png" alt="Tech">
-                        <img src="/images/glove.png" alt="Glove">
-                    </div>
-                    <div class="slider-controls">
-                        <button id="prevBtn">&lt;</button>
-                        <button id="nextBtn">&gt;</button>
-                    </div>
-                </div>
+                <img src="/images/cup.jpeg" alt="SDG" style="width: 20%;">
+            </div>
+            <div class="section">
+                <img src="/images/med.jpg" alt="SDG" style="width: 20%;">
+            </div>
+            <div class="section">
+                <img src="/images/big.jpeg" alt="SDG" style="width: 20%;">
             </div>
         </div>
     </div>
