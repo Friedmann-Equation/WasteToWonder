@@ -121,6 +121,28 @@
             padding: 10px;
             cursor: pointer;
         }
+        .donation-form {
+            display: none;
+            background-color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        .donation-form input, .donation-form select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+        .donation-form button {
+            background-color: #8a19c9;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            color: #fff;
+        }
     </style>
     <title>NeuTrack Dashboard</title>
 </head>
@@ -129,7 +151,7 @@
         <img class="pics" src="/images/neutrack.png" alt="content">
         <div>
             <button onclick="window.location.href='{{ route('choose-glove') }}'">Buy Glove</button>
-            <button>Donate Now</button>
+            <button onclick="toggleDonationForm()">Donate Now</button>
         </div>
     </div>
 
@@ -171,6 +193,21 @@
                     </div>
                 </div>
             </div>
+            <div class="donation-form" id="donationForm">
+                <form action="{{ route('donate') }}" method="POST">
+                    @csrf
+                    <input type="hidden" name="user_id" value="{{ session('userid') }}">
+                    <label for="bottle_type">Bottle Type:</label>
+                    <select name="bottle_type" id="bottle_type">
+                        <option value="small">Small</option>
+                        <option value="medium">Medium</option>
+                        <option value="large">Large</option>
+                    </select>
+                    <label for="amount">Amount:</label>
+                    <input type="number" name="amount" id="amount" required>
+                    <button type="submit">Donate</button>
+                </form>
+            </div>
         </div>
     </div>
 
@@ -178,6 +215,7 @@
         const slider = document.querySelector('.slider');
         const prevBtn = document.getElementById('prevBtn');
         const nextBtn = document.getElementById('nextBtn');
+        const donationForm = document.getElementById('donationForm');
 
         let currentIndex = 0;
 
@@ -198,6 +236,10 @@
         function updateSlider() {
             const width = slider.children[0].clientWidth;
             slider.style.transform = `translateX(-${currentIndex * width}px)`;
+        }
+
+        function toggleDonationForm() {
+            donationForm.style.display = donationForm.style.display === 'none' ? 'block' : 'none';
         }
     </script>
 </body>

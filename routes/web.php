@@ -53,5 +53,9 @@ Route::middleware(['web'])->group(function () {
 
     Route::get('/home', [HomeController::class, 'index'])->name('home');
 
+    Route::get('/donatebottles', function () {
+        return view('donatebottles');
+    })->name('donatebottles');
+
     Route::post('/donate', [DonationController::class, 'store'])->name('donate');
 });

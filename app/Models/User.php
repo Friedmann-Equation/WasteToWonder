@@ -42,4 +42,12 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    /**
+     * Get the donations for the user.
+     */
+    public function donations()
+    {
+        return $this->hasMany(Donation::class);
+    }
 }
