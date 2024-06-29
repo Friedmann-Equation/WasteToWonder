@@ -14,4 +14,6 @@ class Donation extends Model
         'bottle_type',
         'amount',
     ];
+
+    protected $table = 'donations';
 }

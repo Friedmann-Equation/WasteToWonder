@@ -9,6 +9,7 @@ use App\Http\Controllers\PointsController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ChooseBottleController;
 use App\Http\Controllers\DonationController;
+use App\Http\Controllers\AdminController;
 
 Route::get('/', function () {
     return redirect()->route('signin');
@@ -58,4 +59,8 @@ Route::middleware(['web'])->group(function () {
     })->name('donatebottles');
 
     Route::post('/donate', [DonationController::class, 'store'])->name('donate');
+
+    Route::get('/admin/login', [AdminController::class, 'showLoginForm'])->name('admin.login');
+    Route::post('/admin/login', [AdminController::class, 'login'])->name('admin.login.submit');
+    Route::get('/admin/dashboard', [AdminController::class, 'showDashboard'])->name('admin.dashboard')->middleware('auth.admin');    
 });

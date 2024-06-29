@@ -90,6 +90,9 @@
     <title>NeuTrack</title>
 </head>
 <body>
+    <div class="header">
+        <button onclick="window.location.href='{{ route('admin.login') }}'">Admin</button>
+    </div>
     <div class="container">
         <div class="card">
             <hr class="bg-gray-100 h-0.5 rounded-lg w-16 mx-auto">

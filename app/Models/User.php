@@ -46,8 +46,10 @@ class User extends Authenticatable
     /**
      * Get the donations for the user.
      */
+// User.php model
     public function donations()
     {
         return $this->hasMany(Donation::class);
     }
+
 }
