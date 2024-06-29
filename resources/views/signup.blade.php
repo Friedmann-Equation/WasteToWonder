@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+
         body {
             background-image: url('/images/background.png');
             background-size: cover;
@@ -86,10 +88,36 @@
             justify-content: space-between;
             margin-top: 20px;
         }
+        .header {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+        }
+        .admin-button {
+            background-color: rgb(138, 25, 201);
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            padding: 10px;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        .admin-button i {
+            font-size: 18px;
+        }
     </style>
     <title>NeuTrack</title>
 </head>
 <body>
+    <div class="header">
+        <button class="admin-button" onclick="window.location.href='{{ route('admin.login') }}'">
+            <i class="fas fa-user"></i>
+        </button>
+    </div>
     <div class="container">
         <div class="card">
             <hr class="bg-gray-100 h-0.5 rounded-lg w-16 mx-auto">
