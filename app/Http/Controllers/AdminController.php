@@ -7,6 +7,9 @@ use App\Models\User;
 use App\Models\Donation;
 use App\Models\Transaction;
 
+use App\Models\BottleDonation;
+use App\Models\GlovePurchase;
+
 class AdminController extends Controller
 {
     protected $adminPassword = 'secretpassword';
@@ -42,5 +45,22 @@ class AdminController extends Controller
         $transactions = Transaction::all();
     
         return view('admin.dashboard', compact('customers', 'donations', 'transactions'));
+        return view('admin.customers', compact('customers', 'donations', 'transactions'));
     }
+
+    public function showCustomers() {
+        $customers = User::all(); 
+        return view('admin.customers', compact('customers'));
+    }
+
+    public function showBottleDonations() {
+        $donations = Donation::all(); 
+        return view('admin.bottle_donations', compact('donations'));
+    }
+
+    public function showGlovePurchases() {
+        $transactions = Transaction::all();
+        return view('admin.glove_purchases', compact('transactions'));
+    }
+
 }    

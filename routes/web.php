@@ -62,5 +62,10 @@ Route::middleware(['web'])->group(function () {
 
     Route::get('/admin/login', [AdminController::class, 'showLoginForm'])->name('admin.login');
     Route::post('/admin/login', [AdminController::class, 'login'])->name('admin.login.submit');
-    Route::get('/admin/dashboard', [AdminController::class, 'showDashboard'])->name('admin.dashboard')->middleware('auth.admin');    
+    Route::get('/admin/dashboard', [AdminController::class, 'showDashboard'])->name('admin.dashboard')->middleware('auth.admin');  
+    
+    Route::get('/customers', [AdminController::class, 'showCustomers'])->name('customers');
+    Route::get('/bottle-donations', [AdminController::class, 'showBottleDonations'])->name('bottle.donations');
+    Route::get('/glove-purchases', [AdminController::class, 'showGlovePurchases'])->name('glove.purchases');
+
 });

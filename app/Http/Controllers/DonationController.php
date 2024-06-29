@@ -19,4 +19,10 @@ class DonationController extends Controller
 
         return redirect()->back()->with('success', 'Donation recorded successfully.');
     }
+
+    public function index()
+    {
+        $donations = Donation::all(); 
+        return view('admin.customers', compact('donations')); 
+    }
 }
