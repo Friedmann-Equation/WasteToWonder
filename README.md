@@ -1,3 +1,11 @@
+## Interface
+
+<img width="1710" alt="Screenshot 2024-06-29 at 18 50 18" src="https://github.com/angiebow/ourwonder/assets/121101474/90ff4997-58d5-4ac6-8989-7c071ebfa785">
+
+<img width="1710" alt="Screenshot 2024-06-29 at 18 49 38" src="https://github.com/angiebow/ourwonder/assets/121101474/bf6e9546-3ea9-4027-8307-19cb271f2b9f">
+
+<img width="1710" alt="Screenshot 2024-06-29 at 18 50 49" src="https://github.com/angiebow/ourwonder/assets/121101474/8ac2b099-a401-4d69-942b-46d3866b5fba">
+
 ## Update
 
 ### SQL Triggers
