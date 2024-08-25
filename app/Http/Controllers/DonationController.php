@@ -23,6 +23,6 @@ class DonationController extends Controller
     public function index()
     {
         $donations = Donation::all(); 
-        return view('admin.customers', compact('donations')); 
+        return view('admin.customers', compact('donations›')); 
     }
 }
