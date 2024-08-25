@@ -30,9 +30,9 @@ Route::middleware(['web'])->group(function () {
         return view('choose-glove');
     })->name('choose-glove');
 
-    Route::get('/choose-bottle', function () {
-        return view('choose-bottle');
-    })->name('choose-bottle');
+    // Removed duplicate route to avoid conflict
+    Route::get('/choose-bottle', 'BottleController@choose')->name('choose-bottle-get');
+    Route::post('/choose-bottle', 'BottleController@submitChoice')->name('choose-bottle-post');
     
     Route::get('/mobile-glove', function () {
         return view('mobile-glove-page');
@@ -41,8 +41,6 @@ Route::middleware(['web'])->group(function () {
     Route::get('/lite-glove', function () {
         return view('lite-glove-page');
     })->name('lite-glove');
-
-    Route::post('/choose-bottle', [ChooseBottleController::class, 'choose-bottle'])->name('choose-bottle');
 
     Route::post('/purchase', [TransactionController::class, 'purchase'])->name('purchase');
 
@@ -67,5 +65,4 @@ Route::middleware(['web'])->group(function () {
     Route::get('/customers', [AdminController::class, 'showCustomers'])->name('customers');
     Route::get('/bottle-donations', [AdminController::class, 'showBottleDonations'])->name('bottle.donations');
     Route::get('/glove-purchases', [AdminController::class, 'showGlovePurchases'])->name('glove.purchases');
-
 });
