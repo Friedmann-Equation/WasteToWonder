@@ -42,7 +42,8 @@
             text-align: center;
         }
         .card {
-            background-color: rgb(45 45 45);
+            background-color: rgba(255, 255, 255, 0.2); 
+            backdrop-filter: blur(10px); 
             border-radius: 2rem;
             box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
             padding: 5rem;
@@ -50,6 +51,7 @@
             width: 100%;
             margin-top: 4rem;
         }
+        
         .form-group {
             margin-bottom: 15px;
         }
@@ -62,15 +64,15 @@
         .form-group input {
             width: 100%;
             padding: 10px;
-            background-color: rgb(45 45 45);
+            background-color:#fff;
             border: 1px solid #fff;
             border-top: none;
             border-left: none;
             border-right: none;
         }
         .form-group input:focus {
-            background-color: #333; 
-            color: #fff; 
+            background-color: #fff;
+            color: purple; 
             border-color: rgb(138, 25, 201); 
             outline: none;
         }
@@ -109,6 +111,9 @@
         .admin-button i {
             font-size: 18px;
         }
+        .logo {
+            width: 150px; /* Adjust the width value as needed */
+        }
     </style>
     <title>NeuTrack</title>
 </head>
@@ -121,34 +126,34 @@
     <div class="container">
         <div class="card">
             <hr class="bg-gray-100 h-0.5 rounded-lg w-16 mx-auto">
-            <img src="/images/logo.png" alt="Neutrack Logo">
+            <img src="/images/logo.png" alt="Neutrack Logo" class="logo">
             @if(session('success'))
                 <div>{{ session('success') }}</div>
             @endif
             <form method="POST" action="{{ route('signup') }}">
                 @csrf
                 <div class="form-group">
-                    <label for="name">Name:</label>
+                    <label style="color: purple" for="name">Name:</label>
                     <input type="text" id="name" name="name" required>
                 </div>
                 <div class="form-group">
-                    <label for="email">Email:</label>
+                    <label style="color: purple" for="email">Email:</label>
                     <input type="email" id="email" name="email" required>
                 </div>
                 <div class="form-group">
-                    <label for="password">Password:</label>
+                    <label style="color: purple" for="password">Password:</label>
                     <input type="password" id="password" name="password" required>
                 </div>
                 <div class="form-group">
-                    <label for="role">Role:</label>
-                    <input type="text" id="role" name="role" value="customer" required> 
+                    <label style="color: purple" for="role">Role:</label>
+                    <input style="color: purple" type="text" id="role" name="role" value="customer" required> 
                 </div>
                 <div class="form-group-auth" style="display: flex; justify-content: space-between;">
                     <button type="submit">Sign Up</button>
                 </div>
             </form>
             <br>
-            <p>Already have an account?</p>
+            <p style="color: purple">Already have an account?</p>
             <div class="form-group-auth" style="display: flex; justify-content: space-between;">
                 <button><a href="{{ route('signin') }}">Sign In</a></button>
             </div>

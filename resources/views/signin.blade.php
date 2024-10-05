@@ -30,7 +30,6 @@
             font-family: inherit;
             background-color: transparent;
             cursor: pointer;
-            width: 100%;
         }
         .container {
             display: flex;
@@ -41,8 +40,10 @@
             padding: 1.5rem;
             text-align: center;
         }
+
         .card {
-            background-color: rgb(45 45 45);
+            background-color: rgba(255, 255, 255, 0.2); 
+            backdrop-filter: blur(20px); 
             border-radius: 2rem;
             box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
             padding: 5rem;
@@ -50,6 +51,34 @@
             width: 100%;
             margin-top: 4rem;
         }
+
+        .route-buttons-container {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin-top: 2rem;
+        }
+
+        .route-button {
+            background-color: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+            border-radius: 2rem;
+            box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+            padding: 1.5rem;
+            color: rgb(16, 16, 16);
+            font-size: 1.2rem;
+            text-align: center;
+            cursor: pointer;
+            border: none;
+            transition: background-color 0.3s ease;
+            width: 30%;
+            margin: 0 10px; 
+        }
+
+        .route-button:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
         .form-group {
             margin-bottom: 15px;
         }
@@ -57,20 +86,21 @@
             text-align: left;
             display: block;
             margin-bottom: 5px;
-            color: #fff;
+            color: purple;
         }
         .form-group input {
             width: 100%;
             padding: 10px;
-            background-color: rgb(45 45 45);
             border: 1px solid #fff;
             border-top: none;
             border-left: none;
             border-right: none;
+            color: black;
+
+
         }
         .form-group input:focus {
-            background-color: #333; 
-            color: #fff; 
+            color: black;
             border-color: rgb(138, 25, 201); 
             outline: none;
         }
@@ -79,7 +109,7 @@
             border-radius: 5px;
             border: none;
             background-color: rgb(138, 25, 201);
-            color: white;
+            color: whites;
             cursor: pointer;
             width: 100%;
         }
@@ -121,7 +151,7 @@
     <div class="container">
         <div class="card">
             <hr class="bg-gray-100 h-0.5 rounded-lg w-16 mx-auto">
-            <img src="/images/logo.png" alt="Neutrack Logo">
+            <img src="/images/logo.png" alt="Neutrack Logo" style="width: 400px;">
             @if(session('success'))
                 <div>{{ session('success') }}</div>
             @endif
@@ -139,14 +169,18 @@
                     <input type="password" id="password" name="password" required>
                 </div>
                 <div class="form-group-auth" style="display: flex; justify-content: space-between;">
-                    <button type="submit">Sign In</button>
+                    <button type="submit" style="color: white">Sign In</button>
                 </div>
             </form>
             <br>
-            <p>Don't have an account?</p>
+            <p style="color: purple">Don't have an account?</p>
             <div class="form-group-auth" style="display: flex; justify-content: space-between;">
-                <button><a href="{{ route('signup') }}">Sign Up</a></button>
+                <button><a href="{{ route('signup') }}" style="color: white">Sign Up</a></button>
             </div>
+        </div>
+        <div class="route-buttons-container">
+            <a style="color: purple" href="https://memoryreboot.pythonanywhere.com/" class="route-button">Tracking</a>
+            <a style="color: purple" href="https://app.smojo.org/firaniaputri23/neutrack-memobot-for-alzheimer" class="route-button">Memo Bot</a>
         </div>
     </div>
 </body>
